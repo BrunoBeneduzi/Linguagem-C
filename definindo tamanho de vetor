@@ -1,0 +1,23 @@
+# Linguagem-C
+Projetos iniciais
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+int *p, elementos, i;
+
+scanf("%d", &elementos);
+
+p = (int *) malloc(elementos * sizeof(int));
+
+for(i = 0; i < elementos ; i++){
+    scanf("\n%d",&p[i]);
+}
+
+for(i = (elementos - 1); i != -1; i--){
+    printf("%d ", p[i]);
+
+}
+
+return 0;
+}
