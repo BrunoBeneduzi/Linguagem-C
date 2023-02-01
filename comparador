@@ -1,0 +1,44 @@
+# Linguagem-C
+Projetos iniciais
+#include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
+
+
+int main(){
+setlocale(LC_ALL, "");
+char nome[100], nome2[100], arm[100];
+int a, b, c, cont = 0, possui = 0, conta = 0;
+
+scanf("%s %s", nome, nome2);
+
+
+for(a = 0; nome[a]; a++){
+possui = 0;
+conta = 0;
+
+  for(c = 0; arm[c]; c++){
+    if (nome[a] == arm[c]){
+     possui = possui + 1;
+    }
+  }
+   while(possui != 1){
+    for(b = 0; nome2[b]; b++){
+
+      if(nome[a] == nome2[b] && conta == 0){
+        arm[cont] = nome[a];
+        cont = cont + 1;
+        conta = conta + 1;
+      }
+    }
+    possui = possui + 1;
+   }
+}
+printf("a palavra digitada foi (%s) e (%s), e elas tem em comum as seguintes letras \n", nome, nome2);
+for(a = 0; arm[a]; a++){
+    printf("(%c) ", arm[a]);
+}
+
+
+return 0;
+}
