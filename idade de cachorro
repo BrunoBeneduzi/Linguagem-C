@@ -1,0 +1,16 @@
+# Linguagem-C
+Projetos iniciais
+#include <stdlib.h>
+#include <stdio.h>
+
+void main(){
+int a, resultado;
+
+printf("digite a idade do cachorro ");
+
+scanf("%d", &a);
+
+resultado = a * 7;
+
+printf("\no resultado foi: %d", resultado);
+}
