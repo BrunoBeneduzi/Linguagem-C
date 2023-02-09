@@ -1,0 +1,25 @@
+# Linguagem-C
+Projetos iniciais
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+char nome[10000];
+int i, j, cont = 0;
+
+gets(nome);
+
+for(j = 0; j < 10; j++){
+ cont = 0;
+    for(i = 0; nome[i] != '\0'; i++){
+
+        if(nome[i] == '0' + j){
+            cont = cont + 1;
+        }
+    }
+ printf("%d ", cont);
+}
+
+
+return 0;
+}
