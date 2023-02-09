@@ -1,0 +1,45 @@
+# Linguagem-C
+Projetos iniciais
+#include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
+
+int main(){
+setlocale(LC_ALL, "");
+char genero = 'w';
+int  *p , alunos = 0, notas, i;
+
+
+printf("escolha um genero entre B ou G\n");
+scanf("%c", &genero);
+
+printf("digite o numero de alunos\n");
+scanf("%d", &alunos);
+p = (int*)malloc(alunos * sizeof(int));
+
+printf("\ndigite as notas dos alunos\n");
+for(i = 0; i < alunos ; i++){
+  scanf("%d", &p[i]);
+}
+
+printf("\nnotas abaixo\n");
+
+for(i = 0; i < alunos; i++){
+    printf("%d ", p[i]);
+}
+
+if(genero == 'B' || genero == 'b'){
+    for(i = 0; i < alunos; i = i + 2){
+        notas = notas + p[i];
+    }
+}
+printf("\no valor da nota dos meninos > %d", notas);
+
+if(genero == 'G' || genero == 'g'){
+    for(i = 1; i < alunos; i = i + 2){
+        notas = notas + p[i];
+    }
+}
+printf("\no valor da nota das meninas > %d", notas);
+
+}
