@@ -1,0 +1,55 @@
+# Linguagem-C
+Projetos iniciais
+#include <stdio.h>
+#include <stdlib.h>
+
+struct caixa{
+int altura;
+int largura;
+int comprimento;
+};
+typedef struct caixa caixa;
+
+
+int volume(caixa b){
+int resultado;
+
+resultado = b.altura * b.comprimento * b.largura;
+
+return resultado;
+}
+
+int altura(caixa b){
+
+if(b.altura > 40){
+    return 0;
+}
+else{
+    return 1;
+}
+}
+
+
+int main(){
+int i, n;
+
+printf("digite quantas caixas tem > ");
+scanf("%d", &n);
+caixa *caixas = malloc(n * sizeof(caixa));
+
+for(i = 0; i < n; i++){
+printf("digite a proxima caixa > %d \n", i + 1);
+printf("altura, comprimento e largura\n");
+   scanf("%d %d %d", &caixas[i].altura, &caixas[i].comprimento, &caixas[i].largura);
+
+}
+
+for(i = 0; i < n; i++){
+    if(altura(caixas[i])){
+       printf("\n""volume total de >> %d ", volume(caixas[i]));
+    }
+
+}
+
+return 0;
+}
